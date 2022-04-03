@@ -20,7 +20,7 @@ for review in reviews:
     try:
         recommendation = review.select("span.user-post__author-recomendation > em").pop(0).text
         recommendation = True if recommendation == "Polecam" else False 
-    except recommendation = None
+    except: recommendation = None
 
     stars = review.select("span.user-post__score-count").pop(0).text
     stars = stars[:-2].replace(",",".")
